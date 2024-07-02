@@ -90,9 +90,12 @@ public class MemberControllerDocumentationTest {
                         getRequestPreProcessor(),
                         getResponsePreProcessor(),
                         pathParameters(
+                                List.of(
                                 parameterWithName("memberId").description("회원 식별자")
+                                )
                         ),
                         responseFields(
+                                List.of(
                                 fieldWithPath("data").type(JsonFieldType.OBJECT).description("결과 데이터"),
                                 fieldWithPath("data.memberId").type(JsonFieldType.NUMBER).description("회원 식별자"),
                                 fieldWithPath("data.email").type(JsonFieldType.STRING).description("회원 이메일"),
@@ -100,6 +103,7 @@ public class MemberControllerDocumentationTest {
                                 fieldWithPath("data.phone").type(JsonFieldType.STRING).description("회원 핸드폰번호"),
                                 fieldWithPath("data.memberStatus").type(JsonFieldType.STRING).description("회원 상태 : 활동중 / 휴면 상태 / 탈퇴 상태"),
                                 fieldWithPath("data.stamp").type(JsonFieldType.NUMBER).description("회원 스탬프 개수")
+                                )
                         )
                 ));
     }
@@ -145,11 +149,13 @@ public class MemberControllerDocumentationTest {
                         "get-members",
                         getRequestPreProcessor(),
                         getResponsePreProcessor(),
-                        requestParameters(
+                        requestParameters( List.of(
                                 parameterWithName("page").description("페이지"),
                                 parameterWithName("size").description("페이지 사이즈")
+                                )
                         ),
                         responseFields(
+                                List.of(
                                 fieldWithPath("data").type(JsonFieldType.ARRAY).description("결과 데이터"),
                                 fieldWithPath("data[].memberId").type(JsonFieldType.NUMBER).description("회원 식별자"),
                                 fieldWithPath("data[].email").type(JsonFieldType.STRING).description("회원 이메일"),
@@ -162,6 +168,7 @@ public class MemberControllerDocumentationTest {
                                 fieldWithPath("pageInfo.size").type(JsonFieldType.NUMBER).description("사이즈 정보"),
                                 fieldWithPath("pageInfo.totalElements").type(JsonFieldType.NUMBER).description("전체 정보의 갯수"),
                                 fieldWithPath("pageInfo.totalPages").type(JsonFieldType.NUMBER).description("전체 페이지 갯수")
+                                )
                         )
                 )).andReturn();
 
@@ -176,7 +183,7 @@ public class MemberControllerDocumentationTest {
         //given
         long memberId = 1L;
 
-        doNothing().when(memberService).deleteMember(memberId);
+        doNothing().when(memberService).deleteMember(Mockito.anyLong());
         //when / then
         mockMvc.perform(
                 delete("/v11/members/{memberId}",memberId)
@@ -187,7 +194,9 @@ public class MemberControllerDocumentationTest {
                         getRequestPreProcessor(),
                         getResponsePreProcessor(),
                         pathParameters(
+                                List.of(
                                 parameterWithName("memberId").description("회원 식별자")
+                                )
                         )
                 ));
     }
