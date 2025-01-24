@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/v11/members/1' -i -X DELETE
+----

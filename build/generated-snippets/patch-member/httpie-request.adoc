@@ -1,0 +1,11 @@
+[source,bash]
+----
+$ echo '{
+  "memberId" : 1,
+  "name" : "홍길동",
+  "phone" : "010-1111-1111",
+  "memberStatus" : "MEMBER_ACTIVE"
+}' | http PATCH 'http://localhost:8080/v11/members/1' \
+    'Content-Type:application/json;charset=UTF-8' \
+    'Accept:application/json'
+----

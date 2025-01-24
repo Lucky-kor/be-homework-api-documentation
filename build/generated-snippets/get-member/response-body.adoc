@@ -1,0 +1,13 @@
+[source,options="nowrap"]
+----
+{
+  "data" : {
+    "memberId" : 1,
+    "email" : "taek@gmail.com",
+    "name" : "택",
+    "phone" : "010-2401-4188",
+    "memberStatus" : "활동중",
+    "stamp" : 0
+  }
+}
+----

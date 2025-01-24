@@ -1,0 +1,8 @@
+.+/v11/members/{memberId}+
+|===
+|Parameter|Description
+
+|`+memberId+`
+|삭제할 회원의 식별자
+
+|===

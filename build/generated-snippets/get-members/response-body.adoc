@@ -1,0 +1,26 @@
+[source,options="nowrap"]
+----
+{
+  "data" : [ {
+    "memberId" : 1,
+    "email" : "taek@gmail.com",
+    "name" : "택",
+    "phone" : "010-2401-4188",
+    "memberStatus" : "활동중",
+    "stamp" : 0
+  }, {
+    "memberId" : 2,
+    "email" : "taek2@gmail.com",
+    "name" : "택2",
+    "phone" : "010-2401-4182",
+    "memberStatus" : "활동중",
+    "stamp" : 0
+  } ],
+  "pageInfo" : {
+    "page" : 1,
+    "size" : 2,
+    "totalElements" : 2,
+    "totalPages" : 1
+  }
+}
+----

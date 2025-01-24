@@ -1,0 +1,13 @@
+[source,options="nowrap"]
+----
+{
+  "data" : {
+    "memberId" : 1,
+    "email" : "hgd@gmail.com",
+    "name" : "홍길동",
+    "phone" : "010-1111-1111",
+    "memberStatus" : "활동중",
+    "stamp" : 0
+  }
+}
+----

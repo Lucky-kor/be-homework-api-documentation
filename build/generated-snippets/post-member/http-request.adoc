@@ -1,0 +1,14 @@
+[source,http,options="nowrap"]
+----
+POST /v11/members HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 88
+Host: localhost:8080
+
+{
+  "email" : "hgd@gmail.com",
+  "name" : "홍길동",
+  "phone" : "010-1234-5678"
+}
+----

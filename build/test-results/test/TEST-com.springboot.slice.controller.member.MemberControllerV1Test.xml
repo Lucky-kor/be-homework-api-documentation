@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.springboot.slice.controller.member.MemberControllerV1Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-01-24T09:29:11" hostname="TACO" time="0.303">
+  <properties/>
+  <testcase name="patchMemberTest()" classname="com.springboot.slice.controller.member.MemberControllerV1Test" time="0.236"/>
+  <testcase name="getMemberTest()" classname="com.springboot.slice.controller.member.MemberControllerV1Test" time="0.013"/>
+  <testcase name="getMembersTest()" classname="com.springboot.slice.controller.member.MemberControllerV1Test" time="0.03"/>
+  <testcase name="postMemberTest()" classname="com.springboot.slice.controller.member.MemberControllerV1Test" time="0.01"/>
+  <testcase name="deleteMemberTest()" classname="com.springboot.slice.controller.member.MemberControllerV1Test" time="0.013"/>
+  <system-out><![CDATA[2025-01-24 18:29:09.979  INFO 13220 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.springboot.slice.controller.member.MemberControllerV1Test], using SpringBootContextLoader
+2025-01-24 18:29:09.979  INFO 13220 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.springboot.slice.controller.member.MemberControllerV1Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-01-24 18:29:09.979  INFO 13220 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.springboot.slice.controller.member.MemberControllerV1Test]: MemberControllerV1Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-24 18:29:09.987  INFO 13220 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.springboot.HomeworkApiDocumentationApplication for test class com.springboot.slice.controller.member.MemberControllerV1Test
+2025-01-24 18:29:09.988  INFO 13220 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+2025-01-24 18:29:09.989  INFO 13220 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1895f7fe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a4181ba, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@e77c9c3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4cc9d672, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7bd4f212, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4daee083, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7da70124, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fdf32a4, org.springframework.test.context.event.EventPublishingTestExecutionListener@23471b2f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@19d75d3c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5c3cc103, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5af08232, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@41f57420, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@62e8ef9f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@58e61e18]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2025-01-24 18:29:10.011  INFO 13220 --- [    Test worker] c.s.s.c.member.MemberControllerV1Test    : Starting MemberControllerV1Test using Java 11.0.25 on taco with PID 13220 (started by taekh in C:\backend\be-homework-api-documentation)
+2025-01-24 18:29:10.011  INFO 13220 --- [    Test worker] c.s.s.c.member.MemberControllerV1Test    : No active profile set, falling back to 1 default profile: "default"
+2025-01-24 18:29:10.176  INFO 13220 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-24 18:29:10.199  INFO 13220 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-01-24 18:29:10.296 DEBUG 13220 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-01-24 18:29:10.296  INFO 13220 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-24 18:29:10.301  INFO 13220 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-01-24 18:29:10.302  INFO 13220 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-01-24 18:29:10.302  INFO 13220 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists coffee CASCADE 
+Hibernate: 
+    
+    drop table if exists member CASCADE 
+Hibernate: 
+    
+    drop table if exists order_coffee CASCADE 
+Hibernate: 
+    
+    drop table if exists orders CASCADE 
+Hibernate: 
+    
+    drop table if exists stamp CASCADE 
+Hibernate: 
+    
+    create table coffee (
+       coffee_id bigint generated by default as identity,
+        created_at timestamp,
+        last_modified_at timestamp,
+        coffee_code varchar(3) not null,
+        coffee_status varchar(20) not null,
+        eng_name varchar(100) not null,
+        kor_name varchar(100) not null,
+        price integer not null,
+        primary key (coffee_id)
+    )
+Hibernate: 
+    
+    create table member (
+       member_id bigint generated by default as identity,
+        created_at timestamp,
+        last_modified_at timestamp,
+        email varchar(255) not null,
+        member_status varchar(20) not null,
+        name varchar(100) not null,
+        phone varchar(13) not null,
+        primary key (member_id)
+    )
+Hibernate: 
+    
+    create table order_coffee (
+       order_coffee_id bigint generated by default as identity,
+        created_at timestamp,
+        last_modified_at timestamp,
+        quantity integer not null,
+        coffee_id bigint,
+        order_id bigint,
+        primary key (order_coffee_id)
+    )
+Hibernate: 
+    
+    create table orders (
+       order_id bigint generated by default as identity,
+        created_at timestamp,
+        last_modified_at timestamp,
+        order_status varchar(255),
+        member_id bigint,
+        primary key (order_id)
+    )
+Hibernate: 
+    
+    create table stamp (
+       stamp_id bigint generated by default as identity,
+        created_at timestamp,
+        last_modified_at timestamp,
+        stamp_count integer not null,
+        member_id bigint,
+        primary key (stamp_id)
+    )
+Hibernate: 
+    
+    alter table coffee 
+       add constraint UK_m12kom436k9e8fhohvqdnfakd unique (coffee_code)
+Hibernate: 
+    
+    alter table member 
+       add constraint UK_mbmcqelty0fbrvxp1q58dn57t unique (email)
+Hibernate: 
+    
+    alter table member 
+       add constraint UK_6ithqvsvrcawbi9dtxu0ttsny unique (phone)
+Hibernate: 
+    
+    alter table order_coffee 
+       add constraint FKaddeel2etjqaqm0n5728r9sab 
+       foreign key (coffee_id) 
+       references coffee
+Hibernate: 
+    
+    alter table order_coffee 
+       add constraint FKe95q1ho0v6ug022j3yx82e6eq 
+       foreign key (order_id) 
+       references orders
+Hibernate: 
+    
+    alter table orders 
+       add constraint FKpktxwhj3x9m4gth5ff6bkqgeb 
+       foreign key (member_id) 
+       references member
+Hibernate: 
+    
+    alter table stamp 
+       add constraint FK1oscorlxc4ywlhvbucl1j2q9q 
+       foreign key (member_id) 
+       references member
+2025-01-24 18:29:10.400  INFO 13220 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-01-24 18:29:10.400  INFO 13220 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-24 18:29:10.435 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.448 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.453 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.456 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.484 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.485 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.489 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.513 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.514 DEBUG 13220 --- [    Test worker] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-01-24 18:29:10.648  WARN 13220 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-24 18:29:10.772  INFO 13220 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:test'
+2025-01-24 18:29:10.994  INFO 13220 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-01-24 18:29:10.995  INFO 13220 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-01-24 18:29:10.995  INFO 13220 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-01-24 18:29:11.000  INFO 13220 --- [    Test worker] c.s.s.c.member.MemberControllerV1Test    : Started MemberControllerV1Test in 1.009 seconds (JVM running for 8.567)
+2025-01-24 18:29:11.012 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.springboot.slice.controller.member.MemberControllerV1Test.patchMemberTest]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-01-24 18:29:11.013 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.020 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@3eff5c32]
+2025-01-24 18:29:11.021  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@69eb88a7, testMethod = patchMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@27959c4e]; rollback [true]
+2025-01-24 18:29:11.040 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.040 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.119 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.120 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.205 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.205 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.205 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.205 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.229 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1369960014<open>)] for JPA transaction
+2025-01-24 18:29:11.229 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.236 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-01-24 18:29:11.236 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1369960014<open>)]
+2025-01-24 18:29:11.238 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1369960014<open>)] after transaction
+2025-01-24 18:29:11.238  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@69eb88a7, testMethod = patchMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-01-24 18:29:11.240 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.springboot.slice.controller.member.MemberControllerV1Test.getMemberTest]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-01-24 18:29:11.240 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1378435506<open>)] for JPA transaction
+2025-01-24 18:29:11.240 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4e44b713]
+2025-01-24 18:29:11.240  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@4a83740e, testMethod = getMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@27959c4e]; rollback [true]
+2025-01-24 18:29:11.242 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1378435506<open>)] for JPA transaction
+2025-01-24 18:29:11.242 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.245 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1378435506<open>)] for JPA transaction
+2025-01-24 18:29:11.245 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.249 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1378435506<open>)] for JPA transaction
+2025-01-24 18:29:11.249 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.249 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1378435506<open>)] for JPA transaction
+2025-01-24 18:29:11.250 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.251 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-01-24 18:29:11.251 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1378435506<open>)]
+2025-01-24 18:29:11.252 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1378435506<open>)] after transaction
+2025-01-24 18:29:11.252  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@4a83740e, testMethod = getMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-01-24 18:29:11.253 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.springboot.slice.controller.member.MemberControllerV1Test.getMembersTest]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-01-24 18:29:11.253 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.253 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@17cea679]
+2025-01-24 18:29:11.253  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@1f3c3291, testMethod = getMembersTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@27959c4e]; rollback [true]
+2025-01-24 18:29:11.255 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.255 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.256 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.256 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.260 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.260 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.266 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.266 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.270 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.270 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.272 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1289555759<open>)] for JPA transaction
+2025-01-24 18:29:11.272 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    order by
+        member0_.member_id desc limit ?
+2025-01-24 18:29:11.281 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-01-24 18:29:11.281 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1289555759<open>)]
+2025-01-24 18:29:11.282 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1289555759<open>)] after transaction
+2025-01-24 18:29:11.282  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@1f3c3291, testMethod = getMembersTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-01-24 18:29:11.283 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.springboot.slice.controller.member.MemberControllerV1Test.postMemberTest]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-01-24 18:29:11.283 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(793292236<open>)] for JPA transaction
+2025-01-24 18:29:11.283 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6adee80f]
+2025-01-24 18:29:11.283  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@180466a9, testMethod = postMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@27959c4e]; rollback [true]
+2025-01-24 18:29:11.284 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(793292236<open>)] for JPA transaction
+2025-01-24 18:29:11.284 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.285 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(793292236<open>)] for JPA transaction
+2025-01-24 18:29:11.285 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.292 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-01-24 18:29:11.292 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(793292236<open>)]
+2025-01-24 18:29:11.292 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(793292236<open>)] after transaction
+2025-01-24 18:29:11.292  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@180466a9, testMethod = postMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-01-24 18:29:11.294 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.springboot.slice.controller.member.MemberControllerV1Test.deleteMemberTest]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-01-24 18:29:11.294 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.294 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@400cb9ef]
+2025-01-24 18:29:11.294  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@1405dd10, testMethod = deleteMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@27959c4e]; rollback [true]
+2025-01-24 18:29:11.295 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.296 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    select
+        member0_.member_id as member_i1_1_,
+        member0_.created_at as created_2_1_,
+        member0_.last_modified_at as last_mod3_1_,
+        member0_.email as email4_1_,
+        member0_.member_status as member_s5_1_,
+        member0_.name as name6_1_,
+        member0_.phone as phone7_1_ 
+    from
+        member member0_ 
+    where
+        member0_.email=?
+2025-01-24 18:29:11.296 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.296 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+Hibernate: 
+    insert 
+    into
+        member
+        (member_id, created_at, last_modified_at, email, member_status, name, phone) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stamp
+        (stamp_id, created_at, last_modified_at, member_id, stamp_count) 
+    values
+        (default, ?, ?, ?, ?)
+sent mock email!
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2046467991<open>)] for JPA transaction
+2025-01-24 18:29:11.300 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-01-24 18:29:11.305 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-01-24 18:29:11.305 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(2046467991<open>)]
+2025-01-24 18:29:11.306 DEBUG 13220 --- [    Test worker] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(2046467991<open>)] after transaction
+2025-01-24 18:29:11.306  INFO 13220 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@31e08c61 testClass = MemberControllerV1Test, testInstance = com.springboot.slice.controller.member.MemberControllerV1Test@1405dd10, testMethod = deleteMemberTest@MemberControllerV1Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2db15764 testClass = MemberControllerV1Test, locations = '{}', classes = '{class com.springboot.HomeworkApiDocumentationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@3f446bef, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@74cadd41, [ImportsContextCustomizer@7d727123 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f2613d1, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@426b6a74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3e8f7922, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ec9bd38], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

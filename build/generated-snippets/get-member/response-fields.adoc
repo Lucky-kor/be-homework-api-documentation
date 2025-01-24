@@ -1,0 +1,32 @@
+|===
+|Path|Type|Description
+
+|`+data+`
+|`+Object+`
+|결과 데이터
+
+|`+data.memberId+`
+|`+Number+`
+|회원 식별자
+
+|`+data.email+`
+|`+String+`
+|이메일
+
+|`+data.name+`
+|`+String+`
+|이름
+
+|`+data.phone+`
+|`+String+`
+|휴대폰 번호
+
+|`+data.memberStatus+`
+|`+String+`
+|회원 상태 : 활동중 / 휴면 / 탈퇴
+
+|`+data.stamp+`
+|`+Number+`
+|스탬프
+
+|===
