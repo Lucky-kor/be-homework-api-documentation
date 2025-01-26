@@ -4,45 +4,66 @@
 :toclevels: 4
 :toc-title: Table of Contents
 :source-highlighter: prettify
+:snippets: build/generated-snippets
+Bone Seok Koo <6feetlife56@gmail.com>
 
-Jung Min Lee <jungmin2056@gmail.com>
-
-v1.0.0, 2022.07.10
+v1.0.0, 2025.01.26
 
 ***
 == MemberController
-=== 회원 등록
+=== 회원 정보 단일 요청
 .curl-request
-include::{snippets}/post-member/curl-request.adoc[]
+include::{snippets}/get-member/curl-request.adoc[]
 
 .http-request
-include::{snippets}/post-member/http-request.adoc[]
-
-.request-fields
-include::{snippets}/post-member/request-fields.adoc[]
-
-.http-response
-include::{snippets}/post-member/http-response.adoc[]
-
-.response-headers
-include::{snippets}/post-member/response-headers.adoc[]
-
-
-=== 회원 정보 수정
-.curl-request
-include::{snippets}/patch-member/curl-request.adoc[]
-
-.http-request
-include::{snippets}/patch-member/http-request.adoc[]
+include::{snippets}/get-member/http-request.adoc[]
 
 .path-parameters
-include::{snippets}/patch-member/path-parameters.adoc[]
-
-.request-fields
-include::{snippets}/patch-member/request-fields.adoc[]
+include::{snippets}/get-member/path-parameters.adoc[]
 
 .http-response
-include::{snippets}/patch-member/http-response.adoc[]
+include::{snippets}/get-member/http-response.adoc[]
 
 .response-fields
-include::{snippets}/patch-member/response-fields.adoc[]
+include::{snippets}/get-member/response-fields.adoc[]
+
+.response-body
+include::{snippets}/get-member/response-body.adoc[]
+
+
+=== 회원 정보 전체 조회 요청(페이지 단위)
+.curl-request
+include::{snippets}/get-members/curl-request.adoc[]
+
+.http-request
+include::{snippets}/get-members/http-request.adoc[]
+
+.path-parameters
+include::{snippets}/get-members/path-parameters.adoc[]
+
+.http-response
+include::{snippets}/get-members/http-response.adoc[]
+
+.response-fields
+include::{snippets}/get-members/response-fields.adoc[]
+
+.response-body
+include::{snippets}/get-members/response-body.adoc[]
+
+
+=== 회원 삭제 요청
+.curl-request
+include::{snippets}/delete-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/delete-member/http-request.adoc[]
+
+.path-parameters
+include::{snippets}/delete-member/path-parameters.adoc[]
+
+.http-response
+include::{snippets}/delete-member/http-response.adoc[]
+
+.response-fields
+include::{snippets}/delete-member/response-fields.adoc[]
+
