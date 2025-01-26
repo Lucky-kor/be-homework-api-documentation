@@ -5,9 +5,7 @@
 :toc-title: Table of Contents
 :source-highlighter: prettify
 
-Jung Min Lee <jungmin2056@gmail.com>
-
-v1.0.0, 2022.07.10
+v1.0.0, 2024.01.26
 
 ***
 == MemberController
@@ -46,3 +44,45 @@ include::{snippets}/patch-member/http-response.adoc[]
 
 .response-fields
 include::{snippets}/patch-member/response-fields.adoc[]
+
+== 회원 정보 가져오기
+.curl-request
+include::{snippets}/get-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/get-member/http-request.adoc[]
+
+.http-response
+include::{snippets}/get-member/http-response.adoc[]
+
+.response-body
+include::{snippets}/get-member/http-response.adoc[]
+
+.response-fields
+include::{snippets}/get-member/response-fields.adoc[]
+
+== 회원 정보들 가져오기
+.curl-request
+include::{snippets}/get-members/curl-request.adoc[]
+
+.http-request
+include::{snippets}/get-members/http-request.adoc[]
+
+.http-response
+include::{snippets}/get-members/http-response.adoc[]
+
+.response-body
+include::{snippets}/get-members/http-response.adoc[]
+
+.response-fields
+include::{snippets}/get-members/response-fields.adoc[]
+
+== 회원 정보 삭제하기
+.curl-request
+include::{snippets}/delete-member/curl-request.adoc[]
+
+.http-request
+include::{snippets}/delete-member/http-request.adoc[]
+
+.http-response
+include::{snippets}/delete-member/http-response.adoc[]
